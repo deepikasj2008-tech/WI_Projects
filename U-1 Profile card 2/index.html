@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile Card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="form-box">
+            <h2>Student Details</h2>
+
+            <input type="text" id="name" placeholder="Enter Name">
+
+            <input type="text" id="regno" placeholder="Enter Register Number">
+
+            <input type="text" id="department" placeholder="Enter Department">
+
+            <input type="text" id="college" placeholder="Enter College Name">
+
+            <input type="email" id="email" placeholder="Enter Email">
+
+            <input type="text" id="phone" placeholder="Enter Phone Number">
+
+            <input type="text" id="skills" placeholder="Enter Skills">
+
+            <button onclick="generateCard()">Generate Profile</button>
+        </div>
+
+
+        <div class="profile-card" id="profileCard">
+
+            <div class="profile-icon">
+                👤
+            </div>
+
+            <h2 id="displayName">Student Name</h2>
+
+            <p class="department" id="displayDepartment">
+                Department
+            </p>
+
+            <div class="details">
+                <p><b>Register No:</b> <span id="displayRegno"></span></p>
+
+                <p><b>College:</b> <span id="displayCollege"></span></p>
+
+                <p><b>Email:</b> <span id="displayEmail"></span></p>
+
+                <p><b>Phone:</b> <span id="displayPhone"></span></p>
+
+                <p><b>Skills:</b> <span id="displaySkills"></span></p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,490 @@
+:root {
+  --ink: #1b2a4a;
+  --ink-soft: #445070;
+  --paper: #f5f2e8;
+  --paper-raised: #fffdf7;
+  --brass: #b8863e;
+  --eligible: #3f6b4c;
+  --eligible-bg: #e7efe6;
+  --rust: #a6472f;
+  --rust-bg: #f4e6e0;
+  --rule: #d8d2c0;
+  --shadow: rgba(27, 42, 74, 0.14);
+
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+}
+
+/* ---------- Global ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 37px,
+    var(--rule) 38px
+  );
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+/* ---------- App Shell ---------- */
+
+.app-shell {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 32px 24px 56px;
+}
+
+/* ---------- Header / Letterhead ---------- */
+
+.letterhead {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-bottom: 20px;
+  border-bottom: 3px double var(--ink);
+  margin-bottom: 32px;
+}
+
+.letterhead-mark {
+  flex-shrink: 0;
+  color: var(--brass);
+}
+
+.letterhead-eyebrow {
+  margin: 0 0 2px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.letterhead-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  line-height: 1.15;
+}
+
+.letterhead-subtitle {
+  margin: 4px 0 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--brass);
+}
+
+/* ---------- Main Content ---------- */
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ---------- Student Card ---------- */
+
+.student-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 28px;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 28px;
+  box-shadow: 0 10px 24px var(--shadow);
+  position: relative;
+}
+
+.card-photo-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.photo-frame {
+  width: 168px;
+  height: 168px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 3px solid var(--ink);
+  outline: 1px solid var(--paper-raised);
+  box-shadow: 0 6px 14px var(--shadow);
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Eligibility Seal ---------- */
+
+.seal {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-8deg);
+  opacity: 0.92;
+}
+
+.seal-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.seal-text {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: pre-line;
+  line-height: 1.25;
+  padding: 0 8px;
+}
+
+.seal-eligible {
+  color: var(--eligible);
+}
+
+.seal-watch {
+  color: var(--rust);
+}
+
+/* ---------- Student Details ---------- */
+
+.card-details-col {
+  min-width: 0;
+}
+
+.card-eyebrow {
+  margin: 0 0 4px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.student-name {
+  margin: 0 0 18px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+}
+
+.vitals-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 24px;
+  margin: 0 0 20px;
+}
+
+.vital-wide {
+  grid-column: span 1;
+}
+
+.vitals-grid dt {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 3px;
+}
+
+.vitals-grid dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+}
+
+/* ---------- Ledger Rule ---------- */
+
+.ledger-rule {
+  height: 1px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--rule),
+    var(--rule) 5px,
+    transparent 5px,
+    transparent 9px
+  );
+  margin: 18px 0;
+}
+
+/* ---------- Status ---------- */
+
+.status-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.status-line {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.status-label {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.status-pill {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.01em;
+}
+
+.status-pill-good {
+  color: var(--eligible);
+  background: var(--eligible-bg);
+}
+
+.status-pill-bad {
+  color: var(--rust);
+  background: var(--rust-bg);
+}
+
+/* ---------- About Me ---------- */
+
+.about-me {
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 28px;
+  box-shadow: 0 10px 24px var(--shadow);
+}
+
+.about-me h2 {
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.35rem;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 12px;
+}
+
+.about-me p {
+  margin: 10px 0;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.about-me strong {
+  color: var(--ink);
+}
+
+.about-me h3 {
+  margin: 22px 0 10px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+}
+
+.about-me ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.about-me li {
+  padding: 7px 14px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink);
+}
+
+/* ---------- Ledger / Subject List ---------- */
+
+.ledger {
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 28px;
+  box-shadow: 0 10px 24px var(--shadow);
+}
+
+.ledger-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.ledger-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.35rem;
+}
+
+.ledger-meta {
+  display: flex;
+  gap: 22px;
+  margin: 0;
+}
+
+.ledger-meta dt {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 2px;
+}
+
+.ledger-meta dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--brass);
+  font-weight: 600;
+}
+
+.ledger-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ledger-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.ledger-row:last-child {
+  border-bottom: none;
+}
+
+.ledger-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--brass);
+  flex-shrink: 0;
+}
+
+.ledger-subject {
+  font-weight: 500;
+}
+
+/* ---------- Footer ---------- */
+
+.ledger-footer {
+  margin-top: 36px;
+}
+
+.ledger-footer p {
+  margin: 14px 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 620px) {
+  .app-shell {
+    padding: 24px 16px 40px;
+  }
+
+  .student-card {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .card-details-col {
+    width: 100%;
+  }
+
+  .vitals-grid {
+    text-align: left;
+  }
+
+  .status-line {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .ledger-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ledger-meta {
+    gap: 15px;
+  }
+
+  .about-me {
+    padding: 24px;
+  }
+
+  .about-me ul {
+    justify-content: center;
+  }
+}
+
+/* ---------- Accessibility ---------- */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at 50% 0%, #14172b 0%, #0a0b16 60%, #05060d 100%);
+  font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+  color: #fff;
+}
+
+.page {
+  padding: 48px 20px;
+}
+
+.title-wrap {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+h1 {
+  font-size: 54px;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+h1 .spark {
+  font-size: 30px;
+  background: linear-gradient(180deg, #ffe9a8, #f5b942);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+h1 .white {
+  color: #ffffff;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.35);
+}
+
+h1 .gold {
+  background: linear-gradient(180deg, #ffe9a8 0%, #f2b13f 60%, #d68a1f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 24px rgba(242, 177, 63, 0.35);
+}
+
+.subtitle {
+  margin-top: 14px;
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: #d8d8e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.subtitle::before,
+.subtitle::after {
+  content: '';
+  height: 1px;
+  width: 90px;
+  background: linear-gradient(90deg, transparent, #c9a24a, transparent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 22px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  border-radius: 20px;
+  padding: 28px 22px 26px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+  border: 1.5px solid var(--accent);
+  box-shadow: 0 0 30px -8px var(--accent);
+}
+
+.icon-ring {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 26px -4px var(--accent), inset 0 0 20px -6px var(--accent);
+}
+
+.icon-ring img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card h2 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 4px 0 10px;
+  color: var(--accent);
+  text-shadow: 0 0 12px var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.card h2::before,
+.card h2::after {
+  content: '';
+  height: 1px;
+  width: 26px;
+  background: var(--accent);
+  opacity: 0.6;
+}
+
+.card p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #d9d9e6;
+  margin: 0;
+}
